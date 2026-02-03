@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Home.css"; // add this css file
+import { Link } from "react-router";
 
 export default function Home() {
   const [content, setContent] = useState("");
@@ -59,7 +60,7 @@ export default function Home() {
 
       {url && (
         <p className="link">
-          Share Link: <a href={url}>{url}</a>
+          Share Link: <Link to={url}>{url}</Link>
         </p>
       )}
     </div>
