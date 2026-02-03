@@ -8,7 +8,7 @@ export default function ViewPaste() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`https://binserver-ruby.vercel.app/api/pastes/${id}`)
+    fetch(`https://binserver-nine.vercel.app/api/pastes/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error();
         return res.json();
