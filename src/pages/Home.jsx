@@ -8,7 +8,7 @@ export default function Home() {
   const [url, setUrl] = useState("");
 
   const createPaste = async () => {
-    const res = await fetch("http://localhost:3000/api/pastes", {
+    const res = await fetch("https://binserver-xi.vercel.app/api/pastes", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
