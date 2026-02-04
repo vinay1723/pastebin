@@ -1,16 +1,77 @@
-# React + Vite
+#  Pastebin Application – Local Setup Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This guide explains how to run the Pastebin application locally by configuring both the frontend and backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Project Overview
 
-## React Compiler
+The project consists of two main parts:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React (Vite)
+- **Backend**: Node.js, Express.js, MongoDB
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚙️ Step 1: Update Backend URL in Frontend
+
+To run the project locally, replace the deployed backend URL with the local backend URL.
+
+### 🔄 Replace this URL: https://binserver-nine.vercel.app/  ##with  http://localhost:3000/
+
+
+### 📍 Update the following files:
+
+- `Home.jsx`
+- `ViewPaste.jsx`
+
+### Example:
+
+js
+ Before (Production URL)
+fetch("https://binserver-nine.vercel.app/api/pastes");
+
+// After (Local URL)
+fetch("http://localhost:3000/api/pastes");
+
+## 💻 Step 2: Run the Frontend Application
+
+Navigate to the frontend folder and execute the following commands:
+
+### 1️⃣ Install dependencies
+
+bash
+npm install
+
+### 2 Run the command 
+
+bash
+npm run dev
+
+
+## 🔧 Step 3: Configure CORS in Backend
+
+Open the `app.js` file in the backend project and configure CORS to allow requests from the frontend.
+
+### ✅ Update CORS configuration:
+
+```js
+import cors from "cors";
+
+app.use(cors({
+  origin: "http://localhost:5173"
+}));
+
+##  Run the Backend Application
+
+
+### 1️⃣ Install dependencies
+
+bash
+npm install
+
+### 2 Run the command 
+
+bash
+npm start 
+
