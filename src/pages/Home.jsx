@@ -60,7 +60,10 @@ export default function Home() {
 
       {url && (
         <p className="link">
-          Share Link: <Link to={url}>{url}</Link>
+          Share Link:{" "}
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {url}
+          </a>
         </p>
       )}
     </div>
